@@ -1,0 +1,52 @@
+Merve Elif Demirtas - 150160706
+Gülnur Kaya - 150160154
+Buse Dilan Uslan - 150150063
+
+-------------------------------------------------------------------------------
+
+/include/linux/sched.h
+(line 1468)
+int myFlag;
+
+/include/linux/init_task.h
+(line 218)
+.myFlag = 0,
+
+/include/linux/syscalls.h
+(line 853)
+asmlinkage long sys_set_myFlag(pid_t pid, int flag);
+
+/arch/x86/syscalls/syscall_32.tbl
+(line 364)
+355	i386	set_myflag		sys_set_myflag
+
+
+/kernel/fork.c
+(line 1668-line 1672)
+if(current->myFlag == 1 && task_nice(current) > 10){
+		return -ECHILD;
+	}else{
+		p = copy_process(clone_flags, stack_start, stack_size, child_tidptr, NULL, trace);
+	}
+
+
+/kernel/exit.c
+(line 709-line 717)
+
+struct list_head *head_of_list;
+	struct task_struct *task;
+	
+	if(tsk->myFlag == 1 && task_nice(tsk) > 10){
+		list_for_each(head_of_list, &tsk->sibling) {
+			task = list_entry(head_of_list, struct task_struct, sibling);
+			sys_kill(task->pid, SIGKILL);
+		}
+	}
+
+
+/Makefile
+
+core-y := usr/ set_myFlag/
+
+
+set_myFlag folder creation under /set_myFlag
