@@ -1,0 +1,30 @@
+p {
+  text-align: left;
+  font-size: 60px;
+   //margin: auto;
+    width: 50%;
+	font-size: 100%;
+	}
+	#counter{
+	padding: 75px 0;
+	}
+  #title{
+  text-align: center;
+  }
+  #brk{
+	font-size: 200%;
+  }
+  #break{ text-align: left; width: 50%;}
+
+  #chartdiv {
+    margin:auto;
+  width   : 60%;
+  height    : 250px;
+  font-size : 11px;
+} 
+#chartdiv2 {
+    margin:auto;
+  width   : 60%;
+  height    : 250px;
+  font-size : 11px;
+  }  

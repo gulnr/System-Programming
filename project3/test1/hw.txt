@@ -1,0 +1,25 @@
+System Programming – Project 3
+Using FUSE, implement a file system that will process a directory containing the sources of a website (HTML files, CSS files,
+images and probably also other files) and make them accessible through a different path in the filesystem where the HTML
+files are “tidy”, i.e. their problems like missing or mismatched tags are fixed. The other types of files will be served as they
+are. The file system will have the same directory structure (all files and subdirectories) but it will not keep any files on its
+own; it will only provide an interface for the underlying directory. Any changes to the underlying directory should be
+immediately reflected in the tidied directory but the tidied directory will be read-only.
+For tidying an HTML document, you can use the library given below, which is available on major Linux distributions
+through the package manager:
+http://www.html-tidy.org/documentation/
+In addition to the basic options, by default convert the document to XHTML and indent using 4 spaces during tidying
+(these are options of the libtidy package). For full marks, read the libtidy configuration from a file as described in the
+documentation.
+Each member of the group must make a submission, even though the submitted files may be the same for all group
+members.
+Group members will be graded individually based on their performance in the lab session and the submitted group
+project. Students who are not present during the lab session will not receive a grade for the project, even though they
+may have made a submission through the Ninova system.
+Any form of cheating or plagiarism will not be tolerated. This includes actions such as, but not limited to, submitting the
+work of others as one's own (even if in part and even with modifications) and copy/pasting from other resources (even
+when attributed). The submitted work should be the product of the group itself; collaboration or code sharing between
+different groups will also be regarded as plagiarism. Serious offences will be reported to the administration for disciplinary
+measures.
+Your code should not contain any leftover code you might have copy-pasted from other resources. For example,
+references like “rofs” and “hello” should not be part of your submitted homework.
